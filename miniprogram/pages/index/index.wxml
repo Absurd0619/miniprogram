@@ -1,0 +1,30 @@
+<view class="DrawerPage {{modalName=='viewModal'?'show':''}}">
+  <world wx:if="{{PageCur=='world'}}" publishTime="{{publishTime}}"></world>
+  <about wx:if="{{PageCur=='about'}}"></about>
+  <view class="cu-bar tabbar bg-white shadow foot bg-white">
+    <view class="action text-yellow" bindtap="NavChange" data-cur="world">
+      <view class='cuIcon-cu-image'>
+        <image src="/images/tabbar/world{{PageCur=='world'?'_cur':''}}.png"></image>
+      </view>
+      <view class="{{PageCur=='world'?'text-yellow':'text-gray'}}">NI</view>
+    </view>
+    <view class="action text-gray add-action" bindtap="showModal" data-target="viewModal">
+      <button class="cu-btn cuIcon-add bg-yellow shadow"></button>
+      发布
+    </view>
+    <view class="action text-gray" bindtap="NavChange" data-cur="about">
+      <view class='cuIcon-cu-image'>
+        <image src="/images/tabbar/about{{PageCur=='about'?'_cur':''}}.png" style="width:50%;"></image>
+      </view>
+      <view class="{{PageCur=='about'?'text-yellow':'text-gray'}}">ME</view>
+    </view>
+  </view>
+</view>
+<view class="DrawerClose {{modalName=='viewModal'?'show':''}}" bindtap="hideModal">
+  <text class="cuIcon-unfold lg text-gray"></text>
+</view>
+<scroll-view scroll-y class="DrawerWindow {{modalName=='viewModal'?'show':''}}">
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+    <publish bind:closeModal="hideModal" bind:publishSuccess="publishSuccess"></publish>
+  </view>
+</scroll-view>

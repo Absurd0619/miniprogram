@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "timeLine": "/pages/timeLine/home",
+    "Me":"/pages/about/me/me"
+  }
+}

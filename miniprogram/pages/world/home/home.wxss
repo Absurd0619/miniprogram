@@ -1,0 +1,30 @@
+.scrollPage {
+  height: 100%;
+}
+
+.text-box {
+  margin: 30rpx 15rpx 0;
+  justify-content: space-between;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+.cu-item{
+  height: auto!important;
+  padding: 15rpx;
+}
+.ni-icon{
+  position: absolute;
+  top: 100rpx;
+  left: 40rpx;
+  padding:10rpx;
+  z-index: 2;
+  border-radius: 50%;
+  overflow: hidden;
+  border-color: var(--yellow);
+  border-width: 3px;
+}
+.bg-transparent{
+  background: transparent;
+}

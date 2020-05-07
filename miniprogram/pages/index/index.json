@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "world": "/pages/world/home/home",
+    "about": "/pages/about/home/home",
+    "publish": "/pages/publish/home"
+  }
+}

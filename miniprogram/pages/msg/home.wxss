@@ -1,0 +1,10 @@
+/* miniprogram/pages/msg/home.wxss */
+.text-cut{
+  overflow: hidden;
+  max-width: 80vw;
+  display: inline-block;
+  vertical-align: middle;
+}
+.text-grey{
+  vertical-align: middle;
+}

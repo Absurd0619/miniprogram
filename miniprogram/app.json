@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/lead/lead",
+    "pages/msg/home",
+    "pages/ni/home",
+    "pages/detail/home"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#39b54a",
+    "navigationBarTitleText": "Color UI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom",
+    "me-custom": "/colorui/me-custom/cu-custom",
+    "content": "/pages/content/home",
+    "recommend": "/pages/world/Recommend/home"
+  },
+  "sitemapLocation": "sitemap.json"
+}

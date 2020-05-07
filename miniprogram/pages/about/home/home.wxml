@@ -1,0 +1,15 @@
+<scroll-view scroll-y="{{true}}" class="scrollPage">
+  <me-custom bgColor="bg-gradualWhite" class="about-custom" bindtap="showModal" data-target="DrawerModalL">
+    <view class="logo-box" slot="content">
+      <image id='logo' src="/images/logo.png" class="png logo" mode="widthFix" style="width:48rpx"></image>
+      <text class="logo-text text-shadow text-yellow">你的私有空间！！！</text>
+    </view>
+  </me-custom>
+  <timeLine nikey="{{null}}" bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" ></timeLine>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>
+<view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal" style="padding-top:{{CustomBar}}px;box-sizing:border-box;background:transparent">
+  <view class="cu-dialog basis-lg" catchtap bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd" >
+    <Me></Me>
+  </view>
+</view>

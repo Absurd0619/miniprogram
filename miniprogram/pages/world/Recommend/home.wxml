@@ -1,0 +1,23 @@
+<!--pages/world/Recommend/home.wxml-->
+<view class="cu-card case no-card" bindtap="goDetail" data-id="{{recommendData._id}}">
+  <view class="cu-item shadow">
+    <view class="image">
+      <image wx:if="{{recommendData.imgList.length}}" src="{{recommendData.imgList[0]}}" mode="widthFix"></image>
+      <view class="cu-bar bg-shadeBottom">
+        <text class="text-cut">{{recommendData.content}}</text>
+      </view>
+    </view>
+    <view class="cu-list menu-avatar">
+      <view class="cu-item">
+          <view class="text-gray text-sm flex justify-between">
+            <view class="text-gray text-sm">
+             <!-- {{recommendData.date}} -->
+              <text class="cuIcon-likefill margin-lr-xs text-red"></text> {{recommendData.like || 0}}
+              <text class="cuIcon-appreciatefill margin-lr-xs text-yellow"></text> {{recommendData.appreciate ||0}}
+              <text class="cuIcon-commentfill margin-lr-xs text-green"></text> {{recommendData.comment||0}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>

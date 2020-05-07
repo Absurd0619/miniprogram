@@ -1,0 +1,53 @@
+<scroll-view scroll-y class="scrollPage">
+  <view class="padding flex text-center text-grey bg-white shadow-warp">
+    <view class="flex flex-sub flex-direction solid-right" data-type="1" bindtap="toList">
+      <view class="text-xxl text-orange">{{likeTotal}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-like text-red"></text> 收藏</view>
+    </view>
+    <view class="flex flex-sub flex-direction solid-right" data-type="2" bindtap="toList">
+      <view class="text-xxl text-blue">{{appreciateTotal}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-appreciate text-yellow"></text> 推荐</view>
+    </view>
+    <view class="flex flex-sub flex-direction" data-type="3" bindtap="toList">
+      <view class="text-xxl text-green">{{commentTotal}}
+        <view class="cu-tag badge">new</view>
+      </view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-comment text-green"></text> 评论</view>
+    </view>
+  </view>
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <view class="content" bindtap="showQrcode">
+        <text class="cuIcon-appreciatefill text-red"></text>
+        <text class="text-grey">赞赏支持</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <button class="cu-btn content" open-type="feedback">
+        <text class="cuIcon-writefill text-cyan"></text>
+        <text class="text-grey">意见反馈</text>
+      </button>
+    </view>
+    <view class="cu-item arrow">
+      <button class="cu-btn content" open-type="contact">
+        <text class="cuIcon-mail text-green"></text>
+        <text class="text-grey">和我联系</text>
+      </button>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/about/test/list" hover-class="none">
+        <text class="cuIcon-creativefill text-orange"></text>
+        <text class="text-grey">关于NI</text>
+      </navigator>
+    </view>
+  </view>
+  <view>
+    <view class="flex-sub radius shadow-lg" style="padding-top:100rpx;">
+    <image src="/images/loading.gif" mode="aspectFit" style="width:100vw" class="gif-white response" style="height:240rpx"></image>
+  </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

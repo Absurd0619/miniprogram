@@ -1,0 +1,39 @@
+<!--pages/content/home.wxml-->
+<view>
+  <view data-id="{{item._id}}" hover-class='none' bindtap="goDetail" class="bg-write" style="margin-top:10rpx" wx:for="{{contentData}}" wx:key="i">
+    <view class="cu-card case no-card">
+      <view class="cu-item shadow">
+        <view class="cu-bar">
+          <view class="text-box">
+            <view class="cu-tag bg-yellow">{{item.type}}</view>
+            {{item.content}}
+          </view>
+        </view>
+        <!-- <view wx:if="{{item.imgList.length}}" class="image">
+          <image src="{{item.imgList[0]}}" mode="widthFix"></image>
+        </view> -->
+        <swiper class="card-swiper" circular="true" bindchange="cardSwiper">
+          <swiper-item wx:for="{{item.imgList}}" wx:for-item="img" wx:key='index' class="{{cardCur==i?'cur':''}}">
+            <view class="swiper-item">
+              <image src="{{img}}" mode="aspectFill"></image>
+              <!-- <video src="{{img}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video> -->
+            </view>
+          </swiper-item>
+        </swiper>
+        <view class="cu-list menu-avatar">
+          <view class="cu-item">
+            <view class="text-gray text-sm flex justify-between" style="width:100%">
+              {{item.date.d}}  {{item.date.dic}}  {{ item.date.date}}
+              <view class="text-gray text-sm">
+                <text class="cuIcon-likefill margin-lr-xs text-red"></text> {{item.like || 0}}
+                <text class="cuIcon-appreciatefill margin-lr-xs text-yellow"></text> {{item.appreciate ||0}}
+                <text class="cuIcon-commentfill margin-lr-xs text-green"></text> {{item.comment||0}}
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

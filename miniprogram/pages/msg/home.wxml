@@ -1,0 +1,21 @@
+<!--miniprogram/pages/msg/home.wxml-->
+<cu-custom bgColor="bg-gradualWhite" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content"></view>
+</cu-custom>
+<view class="cu-list menu sm-border" wx:if="msgList.length">
+  <view class="cu-item" wx:for="{{msgList}}" wx:key="index" bindtap="toDetail" data-dynamicid="{{item.dynamicId}}" data-id="{{item._id}}">
+    <view class="content">
+      <text class="{{item.hasRead?'cuIcon-grey':'cuIcon-read'}}">
+      </text>
+      <text class="text-grey text-cut" wx:if="{{type=='1'}}"> 有人在{{item.date.d}}  {{item.date.dic}}  {{ item.date.date}}收藏了您的动态</text>
+      <text class="text-grey text-cut" wx:if="{{type=='2'}}"> 有人在{{item.date.d}}  {{item.date.dic}}  {{ item.date.date}}推荐了您的动态</text>
+      <text class="text-grey text-cut" wx:if="{{type=='3'}}"> 有人在{{item.date.d}}  {{item.date.dic}}  {{ item.date.date}}评论了您的动态</text>
+    </view>
+  </view>
+</view>
+<view wx:if="msgList.length===0">
+        <view class="flex-sub radius shadow-lg" style="padding-top:60rpx;">
+          <image src="cloud://urt-wy-epnoc.7572-urt-wy-epnoc-1300874780/null.gif" mode="aspectFit" style="width:100vw" class="gif-white response" style="height:240rpx"></image>
+        </view>
+      </view>

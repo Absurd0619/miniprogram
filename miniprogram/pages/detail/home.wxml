@@ -1,0 +1,88 @@
+<!--miniprogram/pages/detail/home.wxml-->
+
+
+<view class="backBtn" bindtap="back">
+  <text class="cuIcon-back">
+    </text>
+</view>
+<view class="content-box">
+  <view class="num-box">
+    <view class="text-gray text-sm text-right padding">
+      <text bindtap="Like" class="cuIcon-likefill margin-lr-xs text-red {{like?'changeBiglike':''}}"></text>
+      <text class="margin-lr-xs num-text">{{detailObj.like || 0}}</text>
+      <text bindtap="DianZan" class="cuIcon-appreciatefill margin-lr-xs text-yellow {{dianzan?'changeBigzan':''}}"></text>
+      <text class="margin-lr-xs num-text">{{detailObj.appreciate || 0}}</text>
+      <text bindtap="showComment" class="cuIcon-commentfill margin-lr-xs text-green"></text>
+      <text class="margin-lr-xs num-text">{{detailObj.comment || 0}}</text>
+    </view>
+
+  </view>
+  <view class="cu-item shadow">
+    <swiper style="height:100vh">
+      <swiper-item data-url="{{img}}" bindtap="ViewImage" wx:for="{{detailObj.imgList}}" wx:for-item="img" wx:key='i' class="{{cardCur==i?'cur':''}}">
+        <view class="swiper-item">
+          <image src="{{img}}" mode="widthFix"></image>
+          <!-- <video src="{{img}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video> -->
+        </view>
+      </swiper-item>
+    </swiper>
+    <view class="cu-bar bg-shadeBottom">
+      <view class="text-cut">
+        <view class="{{showText?'detail-text-box':'text-box'}}" bindtap="showAll">{{detailObj.content}}
+        </view>
+        <view class="text-gray text-sm">
+          <view class="cu-tag bg-yellow">{{detailObj.type}}</view>
+          {{detailObj.date.d}} {{detailObj.date.dic}} {{detailObj.date.date}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<!-- <scroll-view id="content-box" class="cu-card dynamic no-card {{isComment?'has-send':''}}" enable-back-to-top="{{true}}"> -->
+<!-- </scroll-view> -->
+
+<view class="cu-modal bottom-modal {{isComment?'show':''}}" bindtap="showComment">
+  <view class="cu-dialog" catchtap>
+    <view class="cu-bar bg-white">
+      <view class="action text-blue" bindtap="showComment">取消</view>
+      <view class="action text-green" bindtap="showComment">确定</view>
+    </view>
+    <!-- 评论 -->
+    <view class="cu-list menu-avatar comment">
+      <view class="cu-item" wx:for="{{commentList}}" wx:key="index" wx:if="commentList.length">
+        <view class="cu-avatar round">NI</view>
+        <view class="content">
+          <view class="text-gray text-content text-df" catchtap="commentContent" data-commentId="{{item._id}}" data-index="{{index}}">
+            {{item.content}}
+          </view>
+          <view class="bg-grey padding-sm radius margin-top-sm  text-sm" wx:for="{{item.commentList}}" wx:for-item="comment" wx:key='i'>
+            <view class="flex">
+              <view class="flex-sub">{{comment.content}}</view>
+            </view>
+          </view>
+          <view class="margin-top-sm flex justify-between">
+            <view class="text-gray text-df">{{item.date.d}} {{item.date.dic}} {{ item.date.date}}</view>
+            <view>
+              <text class="cuIcon-appreciatefill text-red" bindtap="commentZan" data-commentId="{{item._id}}" data-index="{{index}}"></text>{{item.zan}}
+              <text class="cuIcon-messagefill text-gray margin-left-sm" data-commentId="{{item._id}}" bindtap="commentContent" data-index="{{index}}"></text>{{item.commentList.length}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{commentList.length=== 0}}">
+        <view class="flex-sub radius shadow-lg" style="padding-top:40rpx;">
+          <image src="cloud://urt-wy-epnoc.7572-urt-wy-epnoc-1300874780/null.gif" mode="aspectFit" style="width:100vw" class="gif-white response" style="height:240rpx"></image>
+        </view>
+      </view>
+      <view class="cu-bar input solid-top">
+        <view class="action">
+          <text class="cuIcon-keyboard text-grey"></text>
+        </view>
+        <input class="solid-bottom" value="{{sendValue}}" bindconfirm="send" bindinput="getInputValue" maxlength="300" cursor-spacing="10"></input>
+        <button class="cu-btn bg-green shadow-blur" bindtap="send">发送</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+/* pages/publish/home.wxss */
+.contant{
+  padding: 20rpx;
+}

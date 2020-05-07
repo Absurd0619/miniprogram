@@ -1,0 +1,4 @@
+<cu-custom bgColor="bg-gradualWhite" isCustom="{{true}}">
+  <view slot="content">私有空间</view>
+</cu-custom>
+<timeLine nikey="{{key}}"></timeLine>

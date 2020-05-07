@@ -1,0 +1,23 @@
+.scrollPage {
+  height: 100%;
+}
+.logo-box{
+ vertical-align: middle;
+}
+.logo{
+  width:48rpx;
+  margin-right:30rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.logo-text{
+  vertical-align: middle;
+}
+page{
+  height: 100%;
+}
+.drawer-modal .basis-lg{
+  width: 100vw!important;
+  flex-basis: 100%;
+
+}

@@ -1,0 +1,13 @@
+/* pages/world/Recommend/home.wxss */
+@import "/colorui/main.wxss";
+@import "/colorui/icon.wxss";
+.cu-card.case.no-card .image {
+  margin: 0;
+  border-radius: 0;
+}
+.cu-card.case .image .cu-bar{
+  justify-content: center;
+}
+.cu-list.menu-avatar>.cu-item{
+  height: 80rpx;
+}

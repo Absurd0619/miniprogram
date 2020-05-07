@@ -1,0 +1,51 @@
+<!--pages/publish/home.wxml-->
+<view class="flex solid-bottom padding justify-between">
+  <button bindtap="hideModal" class="cu-btn round line-gray shadow">取消</button>
+  <button class="cu-btn round bg-yellow shadow" bindtap="publishFn">发布</button>
+</view>
+<view class="contant">
+  <view class="cu-form-group">
+    <view class="title">话题</view>
+    <input data-name="type" value="{{publish.type}}" placeholder="话题" bindinput="getInputValue"></input>
+  </view>
+  <view class="cu-form-group margin-top">
+    <textarea data-name="content" value="{{publish.content}}" maxlength="-1" disabled="{{modalName!=null}}" bindinput="getInputValue" placeholder="此刻，想对自己说。。。"></textarea>
+  </view>
+  <view class="cu-bar bg-white margin-top">
+    <view class="action">
+      图片上传
+    </view>
+    <view class="action">
+      {{imgList.length}}/4
+    </view>
+  </view>
+  <view class="cu-form-group">
+    <view class="grid col-4 grid-square flex-sub">
+      <view class="bg-img" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage" data-url="{{imgList[index]}}">
+        <image src='{{imgList[index]}}' mode='aspectFill'></image>
+        <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+          <text class="cuIcon-close"></text>
+        </view>
+      </view>
+      <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+        <text class="cuIcon-cameraadd"></text>
+      </view>
+    </view>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">公开</view>
+    <switch data-name="isPublish" class="yellow sm" checked="{{isPublish}}" bindchange="getInputValue"></switch>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">私有空间</view>
+    <switch data-name="isNi" class="yellow sm" checked="{{isNi}}" bindchange="getInputValue"></switch>
+  </view>
+  <view class="cu-form-group" wx:if="{{publish.isNi}}">
+    <view class="title">私有空间密码</view>
+    <input data-name="keyWord" value="{{publish.keyWord}}" placeholder="请输入密码" type="number" bindinput="getInputValue"></input>
+  </view>
+  <view class="cu-form-group" wx:if="{{!publish.isNi&&IsAdmin}}">
+    <view class="title">是否推荐</view>
+    <switch data-name="isTuijian" class="yellow sm" checked="{{isTuijian}}" bindchange="getTuijian"></switch>
+  </view>
+</view>

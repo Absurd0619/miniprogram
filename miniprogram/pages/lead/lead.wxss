@@ -1,0 +1,51 @@
+/* miniprogram/pages/lead/lead.wxss */
+
+.card-swiper {
+  background: #fff;
+  height: 100vh !important;
+  padding: 15% 0;
+}
+
+.page-box {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: #fff;
+}
+
+.btn-box {
+  padding-right: 40rpx;
+  text-align: right;
+  position: absolute;
+  bottom: 50rpx;
+  right: 0;
+}
+
+.cu-bar {
+  position: absolute;
+  bottom: 0rpx;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  justify-content: center;
+}
+.text-center{
+  /* margin-top:30%; */
+}
+.img-box{
+  height: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background: transparent;
+}
+.img-item{
+  flex: 1;
+  display:flex;
+  background: transparent;
+  align-items:center;/*垂直居中*/
+  justify-content: center;/*水平居中*/
+}
+.lg:before{
+  font-size:120rpx;
+}

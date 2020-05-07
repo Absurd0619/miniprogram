@@ -1,0 +1,27 @@
+<!--miniprogram/pages/lead/lead.wxml-->
+<view class="page-box">
+  <swiper class="card-swiper square-dot" indicator-dots="true" circular="true" duration="500" bindchange="cardSwiper" indicator-color="#efca4a" indicator-active-color="#efca4a">
+    <swiper-item wx:for="{{swiperList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+      <view class="swiper-item">
+        <view style="height:100%;" class="bg-gradualYellow padding radius text-center shadow-blur">
+          <view class="img-box">
+            <view class="img-item" wx:for="{{item.content}}" wx:for-item="contentItem" wx:key='i'>
+              <image wx:if="{{item.id===0}}" src="{{contentItem.img}}" mode="aspectFit"></image>
+              <view class="cu-item" wx:if="{{item.type ==='icon'}}" style="color:{{contentItem.color}}">
+                <text class="cuIcon-{{contentItem.name}} lg"></text>
+                <view>{{contentItem.text}}</view>
+              </view>
+              <video wx:if="{{item.id===3}}" src="cloud://urt-wy-epnoc.7572-urt-wy-epnoc-1300874780/lvtu.mp4" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"></video>
+            </view>
+            <view class="cu-bar bg-shadeBottom bg-gradualFFF">
+              <text style="color:#e03997" class="text-cut">{{item.text}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class="btn-box">
+    <button class="cu-btn round line-gray shadow" bindtap="goIndex">进入</button>
+  </view>
+</view>

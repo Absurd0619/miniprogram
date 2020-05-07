@@ -1,0 +1,138 @@
+/* miniprogram/pages/detail/home.wxss */
+.card-swiper swiper-item {
+  padding:20rpx 0 ;
+}
+.swiper-item{
+  height: 100%;
+  position: relative;
+}
+.swiper-item image{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+.cu-bar{
+  position: fixed;
+  bottom: 0rpx;
+  width: 100vw;
+height: calc(100rpx + env(safe-area-inset-bottom) / 2);
+  padding-bottom: calc(env(safe-area-inset-bottom) / 2);
+}
+.has-send{
+  padding-bottom: calc(100rpx + env(safe-area-inset-bottom));
+}
+.text-box {
+  margin: 30rpx 30rpx;
+}
+.cu-item {
+  background: #fff;
+}
+
+
+.content-box{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: #333;
+}
+.swiper-item{
+    background: black;
+}
+.cu-bar{
+  width: 100%;
+  padding-left: 30rpx;
+  padding-right:30rpx;
+  height: auto;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+
+}
+.text-box{
+   justify-content: space-between;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  white-space:pre-wrap;
+  margin: 0;
+}
+.detail-text-box{
+  margin: 0;
+  white-space:pre-wrap;
+}
+.comment-box{
+  height: 100vh;
+  width: 100vw;
+}
+.cu-modal .cu-list{
+  max-height: 70vh;
+  width: 100vw;
+  padding-bottom: calc(100rpx + env(safe-area-inset-bottom));
+  overflow-y: auto;
+}
+.cu-dialog{
+  border-radius: 30rpx !important;
+  padding-top: 20rpx;
+}
+.show-comment{
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: none;
+  transition: all 0.4s;
+  z-index: 1000000000;
+}
+.hide-comment{
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s;
+  overflow: hidden;
+}
+.num-box{
+  position: absolute;
+  top:25%;
+  right:0rpx;
+  z-index: 1
+}
+.text-content{
+  text-align: left;
+}
+.num-box .text-gray{
+  display: flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background: transparent;
+}
+.num-box .margin-lr-xs{
+  display: flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background: transparent;
+  font-size: 50rpx;
+  text-align: center;
+  margin:20rpx;
+}
+.num-box .num-text{
+  font-size: 30rpx;
+  margin:0;
+}
+input{
+  text-align: left;
+}
+.changeBiglike{
+  transform: scale(1.5, 1.5);
+  transition: all 1s;
+}
+.changeBigzan{
+  transform: scale(1.5, 1.5);
+  transition: all 1s;
+}
+.backBtn{
+  position: fixed;
+  top:100rpx;
+  left:50rpx;
+  z-index:1;
+  font-size: 40rpx;
+  border-radius: 50%;
+  padding:10rpx;
+  box-sizing:content-box;
+}

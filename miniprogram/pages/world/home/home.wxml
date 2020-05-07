@@ -1,0 +1,41 @@
+<!-- <scroll-view scroll-y="{{true}}" class="scrollPage" enablePullDownRefresh="{{true}}">
+  <button class="cu-btn text-gray ni-icon bg-transparent shadow" bindlongtap="showModal">
+    <image class="ni-icon" src='/images/NI.png' mode='widthFix' class='png' style='width:60rpx'></image>
+  </button>
+  <recommend></recommend>
+  <content></content>
+  <view class='cu-tabbar-height'></view>
+</scroll-view> -->
+
+<view>
+  <button class="cu-btn text-gray ni-icon bg-transparent shadow" bindlongtap="showModal">
+    <image class="ni-icon" src='/images/NI.png' mode='widthFix' class='png' style='width:60rpx'></image>
+  </button>
+  <scroll requesting="{{requesting}}" end="{{scrollData.end}}" empty-show="{{scrollData.emptyShow}}" list-count="{{scrollData.listData.length}}" has-top="{{true}}" top-size="{{80}}" bind:refresh="refresh" bind:more="more">
+    <view class="cells">
+      <recommend recommendData="{{scrollData.recommend}}"></recommend>
+      <content contentData="{{scrollData.listData}}"></content>
+    </view>
+  </scroll>
+
+
+</view>
+
+
+
+
+
+<view class="cu-modal {{modalName=='RadioModal'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog" catchtap>
+    <view class="cu-bar bg-white">
+      <view class="action text-green" bindtap="goNi">确定</view>
+      <view class="action text-blue" bindtap="hideModal">取消</view>
+    </view>
+    <view class="padding-xl">
+      <view class="cu-form-group">
+        <view class="title">私有空间</view>
+        <input value="{{key}}" placeholder="请输入密码" bindinput="getInputValue"></input>
+      </view>
+    </view>
+  </view>
+</view>

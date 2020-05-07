@@ -1,0 +1,7 @@
+/* colorui/components/cu-custom.wxss */
+.cu-custom .cu-bar .content{
+  width: calc(100% - 220rpx);
+  text-align: left;
+  vertical-align: middle;
+  margin: 0 30rpx;
+}
